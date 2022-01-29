@@ -22,7 +22,7 @@ title: Rory McCune Portfolio
 email: rorym@mccune.org.uk
 description: >- # this means to ignore newlines until "baseurl:"
   A place for me to put things so I can reference them.
-baseurl: "/www.mccune.org.uk/" # the subpath of your site, e.g. /blog
+baseurl: "" # the subpath of your site, e.g. /blog
 url: https://www.mccune.org.uk
 domain: www.mccune.org.uk
 twitter_username: raesene
