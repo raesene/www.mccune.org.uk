@@ -4,4 +4,4 @@ title: Welcome
 sitemap: false
 ---
 
-A site where I track what I've been up to, the proecjts I've worked on and talks I've given.
+A site where I track what I've been up to, the projects I've worked on and talks I've given.
