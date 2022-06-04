@@ -2,17 +2,19 @@
 # Must be the same as `author` in `_config.yml`.
 # Change `author1` to your shortname.
 author1:
-  name:              <firstname> <lastname>
-  email:             <mail@domain.tld>
+  name:              Rory McCune
+  email:             <rorym@mccune.org.uk>
 
   # Used at the bottom of each page and at the top of the `about` layout
   # Markdown enabled, can use multiple paragraphs (enabled by `|`)
   about:             |
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-    sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+    Rory has worked in the Information and IT Security arena for the last 22 years in a variety of roles in information security and penetration testing. 
+    These days he spends his work time on container and cloud native security. He is an active member of the container security community having 
+    delivered presentations at a variety of IT and Information security conferences. He has also presented at major containerization conferences 
+    and is an author of the CIS Benchmarks for Docker and Kubernetes and main author of the Mastering Container Security training course which 
+    has been delivered at numerous industry conferences including Blackhat USA. 
     
-    Open `_data/authors.yml` to edit this text.
+    When he's not working, Rory can generally be found out walking and enjoying the scenery of the Scottish highlands.
 
   # This photo will be used in the about section
   picture:
@@ -26,9 +28,10 @@ author1:
   # Comment/uncommet to show/hide
   # Rearrange to change the order in which they appear
   social:
-    twitter:         <username>
-    github:          <username>
-    # email:           <mail@domain.tld>
+    twitter:         raesene
+    github:          raesene
+    linkedin:        rorym
+    email:           <rorym@mccune.org.uk>
     # rss:             https://<url>/feed.xml
     # facebook:        <username>
     # google:          <number>
