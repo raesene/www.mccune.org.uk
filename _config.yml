@@ -52,6 +52,8 @@ menu:
     url:               https://raesene.github.io/
   - title:             Projects
     url:               /projects/
+  - title:             Talks
+    url:               /talks/
 
 
 # Add links to the footer.
@@ -68,7 +70,7 @@ menu:
 copyright:             © 2022. All rights reserved.
 
 # Format of the permalinks
-permalink:             /blog/:categories/:year-:month-:day-:title/
+permalink:             /content/:categories/:year-:month-:day-:title/
 
 # Pagination configuration (used by the `blog` layout)
 paginate:              10
@@ -186,10 +188,10 @@ kramdown:
 
 hydejack:
   # Configure the order of complementary content on blog posts
-  post_addons:         [about, newsletter, related, random, comments]
+  post_addons:         [newsletter, related, random, comments]
 
   # Configure the order of complementary content on project pages
-  project_addons:      [about, newsletter, other, comments]
+  project_addons:      [newsletter, other, comments]
 
   # Set to `true` if you don't want to show an icon indicating external links
   no_mark_external:    false
@@ -290,7 +292,7 @@ hydejack:
 
 collections:
   featured_categories:
-    permalink:         /blog/:name/
+    permalink:         /:name/
     output:            true
 
   featured_tags:
@@ -393,6 +395,9 @@ compress_html:
 sass:
   style:               compressed
 
+
+# Add on rory collections Don't do this it breaks things
+# collections_dir: content
 
 # Jekyll Compose Defaults
 # ---------------------------------------------------------------------------------------
