@@ -8,7 +8,7 @@ date: '01-01-2020'
 image: 
   path: /assets/img/projects/container-security-site.png
 links:
-  - title: Link
+  - title: Container Security Site
     url: https://container-security.site/
 sitemap: false
 ---

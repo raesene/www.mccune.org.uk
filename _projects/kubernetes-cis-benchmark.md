@@ -7,7 +7,7 @@ description: >
 image: 
   path: /assets/img/projects/kubernetes-cis-benchmark.png
 links:
-  - title: Link
+  - title: CIS Benchmark Site
     url: https://www.cisecurity.org/benchmark/kubernetes
 sitemap: false
 ---
