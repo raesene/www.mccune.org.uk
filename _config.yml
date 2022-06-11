@@ -54,6 +54,8 @@ menu:
     url:               /projects/
   - title:             Talks
     url:               /talks/
+  - title:             Articles
+    url:               /articles/
 
 
 # Add links to the footer.
