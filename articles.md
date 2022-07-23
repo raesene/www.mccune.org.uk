@@ -8,12 +8,24 @@ no_groups: true
 
 In addition to my <a href="https://raesene.github.io">Personal Blog</a> I've contributed content to a number of publications.
 
+<h1>Kubernetes Blog</h1>
+
+<ul>
+<li><a href="https://kubernetes.io/blog/2022/01/19/secure-your-admission-controllers-and-webhooks/">Securing Admission controllers</a></li>
+</ul>
+
 <h1>TechBeacon</h1>
 
 <ul>
 <li><a href="https://techbeacon.com/security/container-orchestration-key-what-your-security-team-needs-know"> Container Orchestration Advice for security teams </a></li>
 <li><a href="https://techbeacon.com/enterprise-it/hackers-guide-kubernetes-security"> a Hackers guide to Kubernetes security</a></li>
 </ul>
+
+<h1>DZone</h1>
+<ul>
+<li><a href="https://cdn2.hubspot.net/hubfs/1665891/Assets/Aqua_DZone_Refcard275_KubernetesSecurity.pdf"> DZone Kubernetes Refcard</a></li>
+</ul>
+
 
 <h1>Aqua Blog</h1>
 
@@ -41,3 +53,9 @@ In addition to my <a href="https://raesene.github.io">Personal Blog</a> I've con
 <li><a href="https://blog.aquasec.com/kubernetes-version-1.21-features">Summary of the new security features in Kubernetes 1.21</a></li>
 </ul>
 
+<h1>NCC Group Research Blog</h1>
+<ul>
+<li><a href="https://research.nccgroup.com/2017/11/23/kubernetes-security-consider-your-threat-model/"> Kubernetes Security: Consider your threat model</a></li>
+<li><a href="https://research.nccgroup.com/2017/05/16/setting-a-new-standard-for-kubernetes-deployments/">Setting a new standard for Kubernetes Deployments</a></li>
+<li><a href="https://research.nccgroup.com/2016/08/22/the-cis-security-standard-for-docker-available-now/">CIS Benchmark for Docker</a></li>
+</ul>
