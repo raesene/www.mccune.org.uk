@@ -1,5 +1,5 @@
 ---
-title: Adventures in Container Vulnerability Scanning
+title: Admission control in Kubernetes
 type: post
 category: talks
 ---
