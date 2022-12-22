@@ -13,7 +13,7 @@ In addition to my <a href="https://raesene.github.io">Personal Blog</a> I've con
 <ul>
 <li><a href="https://securitylabs.datadoghq.com/articles/whats-new-for-security-in-kubernetes-126/">What's new for security in Kubernetes 1.26</a></li>
 <li><a href="https://securitylabs.datadoghq.com/articles/whats-new-for-security-in-kubernetes-125/">What's new for security in Kubernetes 1.25</a></li>
-<li><a href="https://securitylabs.datadoghq.com/articles/kubernetes-tokenrequest-api/">Attacker persistence in Kubernetes using the TokenRequest API: Overview, detection, and prevention</li>
+<li><a href="https://securitylabs.datadoghq.com/articles/kubernetes-tokenrequest-api/">Attacker persistence in Kubernetes using the TokenRequest API: Overview, detection, and prevention</a></li>
 </ul>
 
 <h1>Kubernetes Blog</h1>
