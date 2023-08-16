@@ -11,6 +11,13 @@ In addition to my <a href="https://raesene.github.io">Personal Blog</a> I've con
 <h1>Datadog Blog </h1>
 
 <ul>
+<li><a href="https://securitylabs.datadoghq.com/articles/container-security-fundamentals-part-5/">Container Security Fundamentals: Part 5 - Apparmor and Seccomp</a></li>
+<li><a href="https://securitylabs.datadoghq.com/articles/container-security-fundamentals-part-4/">Container Security Fundamentals: Part 4 - Cgroups</a></li>
+<li><a href="https://securitylabs.datadoghq.com/articles/container-security-fundamentals-part-3/">Container Security Fundamentals: Part 3 - Capabilities</a></li>
+<li><a href="https://securitylabs.datadoghq.com/articles/container-security-fundamentals-part-2/">Container Security Fundamentals: Part 2 - Isolation & namespaces</a></li>
+<li><a href="https://securitylabs.datadoghq.com/articles/container-security-fundamentals-part-1/">Container Security Fundamentals: Part 1 - Exploring containers as processes</a></li>
+<li><a href="https://securitylabs.datadoghq.com/articles/whats-new-for-security-in-kubernetes-128/">What's new for security in Kubernetes 1.28</a></li>
+<li><a href="https://securitylabs.datadoghq.com/articles/whats-new-for-security-in-kubernetes-127/">What's new for security in Kubernetes 1.27</a></li>
 <li><a href="https://securitylabs.datadoghq.com/articles/whats-new-for-security-in-kubernetes-126/">What's new for security in Kubernetes 1.26</a></li>
 <li><a href="https://securitylabs.datadoghq.com/articles/whats-new-for-security-in-kubernetes-125/">What's new for security in Kubernetes 1.25</a></li>
 <li><a href="https://securitylabs.datadoghq.com/articles/kubernetes-tokenrequest-api/">Attacker persistence in Kubernetes using the TokenRequest API: Overview, detection, and prevention</a></li>
