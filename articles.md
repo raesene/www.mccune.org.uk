@@ -11,7 +11,11 @@ In addition to my <a href="https://raesene.github.io">Personal Blog</a> I've con
 <h1>Datadog Blog </h1>
 
 <ul>
-<li><a href="https://securitylabs.datadoghq.com/articles/container-security-fundamentals-part-5/">Container Security Fundamentals: Part 5 - Apparmor and Seccomp</a></li>
+<li><a href="https://securitylabs.datadoghq.com/articles/kubernetes-security-fundamentals-part-3/">Kubernetes security fundamentals: Authentication</a></li>
+<li><a href="https://securitylabs.datadoghq.com/articles/kubernetes-security-fundamentals-part-2/">Kubernetes security fundamentals: API Security</a></li>
+<li><a href="https://securitylabs.datadoghq.com/articles/kubernetes-security-fundamentals-part-1/">Kubernetes security fundamentals: Introduction</a></li>
+<li><a href="https://securitylabs.datadoghq.com/articles/container-security-fundamentals-part-6/">Container Security Fundamentals: Part 6 - Seccomp</a></li>
+<li><a href="https://securitylabs.datadoghq.com/articles/container-security-fundamentals-part-5/">Container Security Fundamentals: Part 5 - Apparmor and SELinux</a></li>
 <li><a href="https://securitylabs.datadoghq.com/articles/container-security-fundamentals-part-4/">Container Security Fundamentals: Part 4 - Cgroups</a></li>
 <li><a href="https://securitylabs.datadoghq.com/articles/container-security-fundamentals-part-3/">Container Security Fundamentals: Part 3 - Capabilities</a></li>
 <li><a href="https://securitylabs.datadoghq.com/articles/container-security-fundamentals-part-2/">Container Security Fundamentals: Part 2 - Isolation & namespaces</a></li>
