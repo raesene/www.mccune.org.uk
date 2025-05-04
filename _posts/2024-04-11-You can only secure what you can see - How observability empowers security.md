@@ -1,5 +1,5 @@
 ---
-title: You can only secure what you can see: How observability empowers security
+title: You can only secure what you can see - How observability empowers security
 type: post
 category: talks
 ---
