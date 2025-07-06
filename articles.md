@@ -11,6 +11,9 @@ In addition to my <a href="https://raesene.github.io">Personal Blog</a> I've con
 <h1>Datadog Blog </h1>
 
 <ul>
+<li><a href="https://securitylabs.datadoghq.com/articles/kubernetes-security-fundamentals-part-6/">Kubernetes security fundamentals: Networking</a></li>
+<li><a href="https://securitylabs.datadoghq.com/articles/kubernetes-security-fundamentals-part-5/">Kubernetes security fundamentals: Admission Control</a></li>
+<li><a href="https://securitylabs.datadoghq.com/articles/kubernetes-security-fundamentals-part-4/">Kubernetes security fundamentals: Authorization</a></li>
 <li><a href="https://securitylabs.datadoghq.com/articles/kubernetes-security-fundamentals-part-3/">Kubernetes security fundamentals: Authentication</a></li>
 <li><a href="https://securitylabs.datadoghq.com/articles/kubernetes-security-fundamentals-part-2/">Kubernetes security fundamentals: API Security</a></li>
 <li><a href="https://securitylabs.datadoghq.com/articles/kubernetes-security-fundamentals-part-1/">Kubernetes security fundamentals: Introduction</a></li>
