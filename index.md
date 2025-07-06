@@ -12,3 +12,4 @@ There's links to :-
 - [Projects I've worked on](/projects/)
 - [Talks I've delivered](/talks/)
 - [Articles I've written](/articles/)
+- [Iximiuz tutorials](/tutorials)
