@@ -43,8 +43,7 @@ author:
   # Used by `jekyll-feed`:
   name:                Rory McCune
   email:               <rorym@mccune.org.uk>
-  # # Used by `jekyll-seo-tag`:
-  twitter:             raesene
+
 
 # Add links to the sidebar.
 menu:
