@@ -1,5 +1,5 @@
 ---
-title: Oh what a tangled web we weave when we … network containers!
+title: A Talk about Talks
 type: post
 category: talks
 ---
