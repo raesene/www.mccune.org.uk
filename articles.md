@@ -77,7 +77,7 @@ In addition to my <a href="https://raesene.github.io">Personal Blog</a> I've con
 
 <h1>NCC Group Research Blog</h1>
 <ul>
-<li><a href="https://research.nccgroup.com/2017/11/23/kubernetes-security-consider-your-threat-model/"> Kubernetes Security: Consider your threat model</a></li>
-<li><a href="https://research.nccgroup.com/2017/05/16/setting-a-new-standard-for-kubernetes-deployments/">Setting a new standard for Kubernetes Deployments</a></li>
-<li><a href="https://research.nccgroup.com/2016/08/22/the-cis-security-standard-for-docker-available-now/">CIS Benchmark for Docker</a></li>
+<li><a href="https://www.nccgroup.com/research-blog/kubernetes-security-consider-your-threat-model/"> Kubernetes Security: Consider your threat model</a></li>
+<li><a href="https://www.nccgroup.com/research-blog/setting-a-new-standard-for-kubernetes-deployments/">Setting a new standard for Kubernetes Deployments</a></li>
+<li><a href="https://www.nccgroup.com/research-blog/the-cis-security-standard-for-docker-available-now/">CIS Benchmark for Docker</a></li>
 </ul>
