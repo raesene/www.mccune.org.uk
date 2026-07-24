@@ -1,5 +1,5 @@
 ---
-title: What LLMs do and don't know about securing Kubernetes
+title: Talk about giving talks
 type: post
 category: talks
 ---
