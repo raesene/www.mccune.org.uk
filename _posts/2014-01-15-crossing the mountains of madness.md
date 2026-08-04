@@ -1,7 +1,7 @@
 ---
 title: Crossing the mountains of madness, how to avoid becoming a security cultist
 type: post
-category: Lorem
+category: talks
 ---
 
 This talk looks at some security cargo cults and areas where "common" security advice might be incorrect or misleading.
