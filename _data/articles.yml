@@ -2,6 +2,20 @@
 # Newest first within each publication, matching articles.md.
 - publication: Datadog Blog
   articles:
+    - title: "Unpatchable Vulnerabilities of Kubernetes: CVE-2021-25740"
+      url: https://securitylabs.datadoghq.com/articles/unpatchable-kubernetes-vulnerabilities-cve-2021-25740/
+    - title: "Kubernetes security fundamentals: Secrets"
+      url: https://securitylabs.datadoghq.com/articles/kubernetes-security-fundamentals-part-8/
+    - title: "Unpatchable Vulnerabilities of Kubernetes: CVE-2020-8562"
+      url: https://securitylabs.datadoghq.com/articles/unpatchable-kubernetes-vulnerabilities-cve-2020-8562/
+    - title: "Unpatchable Vulnerabilities of Kubernetes: CVE-2020-8561"
+      url: https://securitylabs.datadoghq.com/articles/unpatchable-kubernetes-vulnerabilities-cve-2020-8561/
+    - title: "Unpatchable Vulnerabilities of Kubernetes: CVE-2020-8554"
+      url: https://securitylabs.datadoghq.com/articles/unpatchable-kubernetes-vulnerabilities-cve-2020-8554/
+    - title: "A 2025 look at real-world Kubernetes version adoption"
+      url: https://securitylabs.datadoghq.com/articles/a-2025-look-at-real-world-kubernetes-adoption/
+    - title: "Kubernetes security fundamentals: PKI"
+      url: https://securitylabs.datadoghq.com/articles/kubernetes-security-fundamentals-part-7/
     - title: "Kubernetes security fundamentals: Networking"
       url: https://securitylabs.datadoghq.com/articles/kubernetes-security-fundamentals-part-6/
     - title: "Kubernetes security fundamentals: Admission Control"
@@ -36,6 +50,8 @@
       url: https://securitylabs.datadoghq.com/articles/whats-new-for-security-in-kubernetes-125/
     - title: "Attacker persistence in Kubernetes using the TokenRequest API: Overview, detection, and prevention"
       url: https://securitylabs.datadoghq.com/articles/kubernetes-tokenrequest-api/
+    - title: "KubeHuddle: The first Scottish Kubernetes conference"
+      url: https://securitylabs.datadoghq.com/articles/kubehuddle-recap-2022/
 - publication: Kubernetes Blog
   articles:
     - title: "Securing Admission controllers"
