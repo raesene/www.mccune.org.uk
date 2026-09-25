@@ -1,5 +1,6 @@
 ---
 layout: project
+plate: /assets/img/nitrile/projects/kubernetes-cis-benchmark.webp
 title: 'Kubernetes CIS Benchmarks'
 caption: Contribution to the Kubernetes CIS Benchmark
 description: >

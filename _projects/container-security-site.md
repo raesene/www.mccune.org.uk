@@ -1,5 +1,6 @@
 ---
 layout: project
+plate: /assets/img/nitrile/projects/container-security-site.webp
 title: 'Container Security Site'
 caption: A site about container security
 description: >

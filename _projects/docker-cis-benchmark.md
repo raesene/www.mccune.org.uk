@@ -1,5 +1,6 @@
 ---
 layout: project
+plate: /assets/img/nitrile/projects/docker-cis-benchmark.webp
 title: 'Docker CIS Benchmarks'
 caption: Contribution to the Docker CIS Benchmark
 description: >

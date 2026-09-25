@@ -1,0 +1,12 @@
+# Tutorials published on Iximiuz Labs.
+# `summary` is the short line used on the homepage; `description` is used on /tutorials/.
+- title: Containers are processes
+  url: https://labs.iximiuz.com/tutorials/containers-are-processes-d17b1df8
+  summary: How the operating system sees a container, and the Linux tools that let you inspect one.
+  description: >
+    This is a core thing to understand when thinking about containers, the idea that, from the operating system's perspective, a container is just a set of processes. This tutorial shows how that works and shows some useful ways that Linux tools can be used to interact with containers.
+- title: An introduction to Docker security
+  url: https://labs.iximiuz.com/tutorials/docker-security-introduction-a859718d
+  summary: Docker's architecture, its attack surface, and some basic container breakouts.
+  description: >
+    This tutorial starts by exploring a bit about the architecture of Docker, then moves on to explore its attack surface, and show some basic container breakout techniques.

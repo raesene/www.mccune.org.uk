@@ -1,37 +1,21 @@
 ---
-# Copyright (c) 2018 Florian Klampfer <https://qwtel.com/>
-#
-# This program is free software: you can redistribute it and/or modify
-# it under the terms of the GNU General Public License as published by
-# the Free Software Foundation, either version 3 of the License, or
-# (at your option) any later version.
-#
-# This program is distributed in the hope that it will be useful,
-# but WITHOUT ANY WARRANTY; without even the implied warranty of
-# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-# GNU General Public License for more details.
-#
-# You should have received a copy of the GNU General Public License
-# along with this program.  If not, see <http://www.gnu.org/licenses/>.
-
-layout: base
+layout: default
 ---
-
-{% assign strings = site.data.strings %}
-
-<div class="page">
-  <h1 class="page-title">{{ page.title | default:strings.not_found.title | default: "404: Page Not Found" }}</h1>
-  <div class="hr pb0"></div>
-
-  {% assign test = page.content | strip_newlines %}
-  {% if test != "" %}
-    {{ content }}
-  {% else %}
-    {% capture home_link %}<a href="{{ '/' | relative_url }}">{{ strings.not_found.home_link | default:"Head back home" }}</a>{% endcapture %}
-    {% assign text = strings.not_found.message
-      | default:"Sorry, we've misplaced that URL or it's pointing to something that doesn't exist. <!--home_link--> to try finding it again." %}
-    <p class="lead">
-      {{ text | replace:"<!--home_link-->", home_link }}
+<article class="doc">
+  <div class="measure">
+    <figure class="project-plate ticks">
+      <img src="{{ '/assets/img/nitrile/not-found.webp' | relative_url }}" width="1400" height="781"
+           alt="Pen and dot-screen drawing of an empty specimen tray on a bench, every compartment vacant, gloves laid beside it.">
+    </figure>
+    <header class="doc-head">
+      <h1>Nothing at this address</h1>
+      <p class="doc-head__lede">The page may have moved when the site was redesigned. Try one of these instead:</p>
+    </header>
+    <p class="actions">
+      <a class="btn btn--ink" href="{{ '/' | relative_url }}">Home</a>
+      <a class="btn" href="{{ '/talks/' | relative_url }}">Talks</a>
+      <a class="btn" href="{{ '/projects/' | relative_url }}">Projects</a>
+      <a class="btn" href="{{ '/articles/' | relative_url }}">Articles</a>
     </p>
-  {% endif %}
-</div>
+  </div>
+</article>

@@ -1,5 +1,6 @@
 ---
 layout: project
+plate: /assets/img/nitrile/projects/rbac-good-practice-guide.webp
 title: 'Kubernetes RBAC Good Practice Guide'
 caption: Led creation of a RBAC good practice Guide for the Kubernetes documentation
 description: >

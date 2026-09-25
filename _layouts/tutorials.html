@@ -1,0 +1,27 @@
+---
+layout: default
+---
+<article class="doc">
+  <div class="measure">
+    <header class="doc-head">
+      <h1>{{ page.title }}</h1>
+    </header>
+
+    <div class="bench__grid bench__grid--doc">
+      <div class="slab">
+        <div class="prose">{{ content }}</div>
+        <ol class="register register--text">
+          {% for tut in site.data.tutorials %}
+            <li class="register__row">
+              <div class="register__copy">
+                <h2><a href="{{ tut.url }}">{{ tut.title }}</a></h2>
+                <p>{{ tut.description }}</p>
+                <p class="register__links"><a href="{{ tut.url }}">Open the tutorial on Iximiuz Labs</a></p>
+              </div>
+            </li>
+          {% endfor %}
+        </ol>
+      </div>
+    </div>
+  </div>
+</article>

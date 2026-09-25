@@ -1,8 +1,6 @@
 ---
 layout: projects
 title: Projects
-show_collection: projects
 description: >
-  Some projects I've worked on.
-no_groups: true
+  Security guidance, benchmarks, books and sites I have led or contributed to.
 ---

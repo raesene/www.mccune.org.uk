@@ -1,5 +1,6 @@
 ---
 layout: project
+plate: /assets/img/nitrile/projects/cloud-native-security-talks.webp
 title: 'Cloud Native Security Talks'
 caption: Created a site collecting together over 300 talks on cloud native security.
 description: >

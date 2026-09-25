@@ -1,5 +1,7 @@
 ---
 layout: project
+featured: true
+plate: /assets/img/nitrile/projects/owasp-kubernetes-top-ten.webp
 title: 'OWASP Kubernetes Top 10'
 caption: Led development of an updated version of the OWASP Kubernetes Top 10
 description: >

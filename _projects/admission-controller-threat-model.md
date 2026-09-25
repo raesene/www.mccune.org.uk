@@ -1,5 +1,6 @@
 ---
 layout: project
+plate: /assets/img/nitrile/projects/admission-controller-threat-model.webp
 title: 'Kubernetes admission controller threat model'
 caption: Led creation of a threat model for Kubernetes admission controllers
 description: >

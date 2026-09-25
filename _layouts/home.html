@@ -1,6 +1,160 @@
 ---
-# Copyright (c) 2018 Florian Klampfer <https://qwtel.com/>
-layout: welcome
+layout: default
 ---
+{% assign talks = site.categories.talks %}
+{% assign first_talk = talks | last %}
+{% assign first_year = first_talk.date | date: "%Y" %}
+{% assign article_count = 0 %}
+{% for pub in site.data.articles %}{% assign article_count = article_count | plus: pub.articles.size %}{% endfor %}
+{% assign featured = site.projects | where: "featured", true | first %}
 
-{{ content }}
+<section class="hero" aria-labelledby="hero-title">
+  <div class="measure">
+    <figure class="hero__plate ticks">
+      <img src="{{ '/assets/img/nitrile/hero-bench.webp' | relative_url }}" width="2000" height="1116"
+           alt="Pen and dot-screen drawing of an empty workbench: an open laptop, a small server rack with a drawer pulled out, stacked shipping containers, a clicker and a conference lanyard, the chair pushed back.">
+      <div class="hero__copy">
+        <h1 id="hero-title">Rory McCune</h1>
+        <p class="lede">I break and secure containers and Kubernetes clusters, then talk and write about what I find. This site keeps the record: talks given, projects led, articles published.</p>
+        <p class="actions">
+          <a class="btn btn--ink" href="{{ '/talks/' | relative_url }}">Browse the talk log</a>
+          <a class="btn" href="https://raesene.github.io/" rel="me">Read the blog</a>
+        </p>
+      </div>
+    </figure>
+
+    <dl class="readout">
+      <div><dt>Talks</dt><dd>{{ talks.size }}</dd></div>
+      <div><dt>Speaking since</dt><dd>{{ first_year }}</dd></div>
+      <div><dt>Projects</dt><dd>{{ site.projects.size }}</dd></div>
+      <div><dt>Articles</dt><dd>{{ article_count }}</dd></div>
+      <div><dt>Tutorials</dt><dd>{{ site.data.tutorials.size }}</dd></div>
+    </dl>
+  </div>
+</section>
+
+<section class="bench" aria-labelledby="talks-title">
+  <div class="measure bench__grid">
+    <div class="slab">
+      <header class="module-head">
+        <h2 id="talks-title">Talk log</h2>
+        <a class="module-head__more" href="{{ '/talks/' | relative_url }}">All {{ talks.size }} talks</a>
+      </header>
+      <ol class="strip strip--talks">
+        {% assign prev_year = "" %}
+        {% for talk in talks limit: 10 %}
+          {% assign year = talk.date | date: "%Y" %}
+          <li class="strip__row{% if forloop.first %} is-pinned{% endif %}">
+            <span class="strip__rail">{% if year != prev_year %}{{ year }}{% endif %}</span>
+            <time datetime="{{ talk.date | date_to_xmlschema }}">{{ talk.date | date: "%d %b" }}</time>
+            <a href="{{ talk.url | relative_url }}">{{ talk.title }}</a>
+            <span class="strip__flag">{% if talk.content contains "youtu" or talk.content contains "vimeo" %}video{% endif %}</span>
+          </li>
+          {% assign prev_year = year %}
+        {% endfor %}
+      </ol>
+    </div>
+
+    <aside class="gutter" aria-label="About">
+      <figure class="plate">
+        <img src="{{ '/assets/img/nitrile/talks-lectern.webp' | relative_url }}" width="1200" height="896" loading="lazy"
+             alt="Pen and dot-screen drawing of an empty lectern on a stage, laptop open, microphone bent toward the absent speaker.">
+      </figure>
+      <pre class="transcript" aria-label="Summary as a kubectl command"><code><span class="prompt">$</span> kubectl get rory -n mccune -o yaml
+apiVersion: people/v1
+kind: Researcher
+metadata:
+  name: rory-mccune
+  labels:
+    focus: container-security
+spec:
+  topics: [containers, kubernetes]
+  talks: {{ talks.size }}
+  articles: {{ article_count }}
+  blog: <a href="https://raesene.github.io/">raesene.github.io</a>
+  labs: <a href="{{ '/tutorials/' | relative_url }}">iximiuz tutorials</a>
+status:
+  phase: Running
+  since: "{{ first_year }}"</code></pre>
+    </aside>
+  </div>
+</section>
+
+<section class="works" aria-labelledby="projects-title">
+  <div class="measure">
+    <header class="module-head">
+      <h2 id="projects-title">Projects</h2>
+      <a class="module-head__more" href="{{ '/projects/' | relative_url }}">Project details</a>
+    </header>
+
+    {% if featured %}
+    <article class="feature ticks">
+      <figure class="feature__plate">
+        <img src="{{ featured.plate | relative_url }}" width="1600" height="893" loading="lazy"
+             alt="Exploded technical drawing of a shipping container, its panels, doors and locking bars pulled apart, with a padlock and a checklist.">
+      </figure>
+      <div class="feature__copy">
+        <p class="module-label"><span class="pin" aria-hidden="true"></span>Featured project</p>
+        <h3><a href="{{ featured.url | relative_url }}">{{ featured.title }}</a></h3>
+        <p>{{ featured.description | strip_html | strip }}</p>
+        {% for link in featured.links %}
+          <a class="btn" href="{{ link.url }}">{{ link.title }}</a>
+        {% endfor %}
+      </div>
+    </article>
+    {% endif %}
+
+    <ul class="strip strip--projects">
+      {% for project in site.projects %}
+        {% unless project.featured %}
+        <li class="strip__row">
+          <a href="{{ project.url | relative_url }}">{{ project.title }}</a>
+          <span class="strip__note">{{ project.caption }}</span>
+        </li>
+        {% endunless %}
+      {% endfor %}
+    </ul>
+  </div>
+</section>
+
+<section class="writing" aria-labelledby="writing-title">
+  <div class="measure writing__grid">
+    <div class="slab">
+      <header class="module-head">
+        <h2 id="writing-title">Writing elsewhere</h2>
+        <a class="module-head__more" href="{{ '/articles/' | relative_url }}">All {{ article_count }} articles</a>
+      </header>
+      {% assign top = site.data.articles | first %}
+      {% assign max = 0 %}
+      {% for pub in site.data.articles %}{% if pub.articles.size > max %}{% assign max = pub.articles.size %}{% endif %}{% endfor %}
+      <ul class="ledger">
+        {% for pub in site.data.articles %}
+          {% assign pct = pub.articles.size | times: 100 | divided_by: max %}
+          <li>
+            <span class="ledger__name">{{ pub.publication }}</span>
+            <span class="ledger__meter" aria-hidden="true"><span style="width: {{ pct }}%"></span></span>
+            <span class="ledger__count">{{ pub.articles.size }}</span>
+          </li>
+        {% endfor %}
+      </ul>
+      <h3 class="subhead">Latest from {{ top.publication }}</h3>
+      <ul class="strip strip--articles">
+        {% for article in top.articles limit: 4 %}
+          <li class="strip__row"><a href="{{ article.url }}">{{ article.title }}</a></li>
+        {% endfor %}
+      </ul>
+    </div>
+
+    <aside class="gutter">
+      <header class="module-head">
+        <h2>Tutorials</h2>
+      </header>
+      <p class="gutter__intro">Hands-on labs on <a href="https://labs.iximiuz.com/">Iximiuz Labs</a>, built from years of container security training material.</p>
+      <ul class="stack">
+        {% for tut in site.data.tutorials %}
+          <li><a href="{{ tut.url }}">{{ tut.title }}</a><span>{{ tut.summary }}</span></li>
+        {% endfor %}
+      </ul>
+    </aside>
+  </div>
+</section>

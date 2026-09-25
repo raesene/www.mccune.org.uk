@@ -1,95 +1,50 @@
 ---
-# Copyright (c) 2018 Florian Klampfer <https://qwtel.com/>
-layout: base
+layout: default
 ---
+{% assign others = site.projects | where_exp: "p", "p.url != page.url" %}
 
-{% assign version = jekyll.version | split:'.' %}
-{% assign major = version[0] | plus:0 %}
-{% assign minor = version[1] | plus:0 %}
-{% assign patch = version[2] | plus:0 %}
+<article class="doc">
+  <div class="measure">
+    <nav class="crumbs" aria-label="Breadcrumb">
+      <a href="{{ '/projects/' | relative_url }}">Projects</a>
+    </nav>
 
-{% assign project = page %}
-{% assign separator = site.data.strings.separator | default:"|" %}
-{% assign nsd = site.hydejack.no_structured_data | default:site.no_structured_data %}
-{% assign proj_format = site.data.strings.date_formats.project | default:"%Y" %}
-{% assign from_to_separator = strings.from_to_separator | default:strings.resume.from_to_separator | default:"–" %}
+    <header class="doc-head">
+      <h1>{{ page.title }}</h1>
+      {% if page.caption %}<p class="doc-head__lede">{{ page.caption }}</p>{% endif %}
+    </header>
 
-<article
-  id="project"
-  class="page mb6"
-  role="article"
-  {% unless nsd %}vocab="http://schema.org/" typeof="CreativeWork" resource="#project"{% endunless %}
-  >
-  <header>
-    <h1 class="page-title" property="name">{{ project.title }}</h1>
+    <figure class="project-plate ticks">
+      <img src="{{ page.plate | relative_url }}" width="1400" height="781" alt="">
+    </figure>
 
-    <p class="post-date heading">
-      <span class="ellipsis mr1">
-        {% if major >= 4 and minor >= 1 %}
-          {% assign parent = site.pages | find:"show_collection",project.collection %}
-        {% else %}
-          {% assign parent = site.pages | where:"show_collection",project.collection | first %}
+    <div class="bench__grid bench__grid--doc">
+      <div class="slab slab--dominant prose">
+        {% if page.description %}<p class="prose__lead">{{ page.description | strip_html | strip }}</p>{% endif %}
+        {{ content }}
+        {% if page.links %}
+          <p class="actions">
+            {% for link in page.links %}
+              <a class="btn{% if forloop.first %} btn--ink{% endif %}" href="{{ link.url }}">{% if link.title == "Link" %}Visit the project{% else %}{{ link.title }}{% endif %}</a>
+            {% endfor %}
+          </p>
         {% endif %}
-
-        {% if parent %}
-          <a href="{{ parent.url | relative_url }}" class="flip-title" property="genre">{{ parent.title }}</a>
+        {% if page.image.path %}
+          <figure class="evidence">
+            <img src="{{ page.image.path | relative_url }}" loading="lazy" alt="Screenshot of {{ page.title }}">
+            <figcaption>Screenshot of {{ page.title }}</figcaption>
+          </figure>
         {% endif %}
+      </div>
 
-        {% unless site.hydejack.hide_dates %}
-          {% if parent %}{{ separator }}{% endif %}
-          <time datetime="{{ project.date | date_to_xmlschema }}">{{ project.date | date:proj_format }}</time>
-          {% if project.end_date.size > 0 %}
-            {{ from_to_separator }}
-            <time datetime="{{ project.end_date | date_to_xmlschema }}">{{ project.end_date | date:proj_format }}</time>
-          {% endif %}
-        {% endunless %}
-      </span>
-
-      <span class="ellipsis ml1">
-        <span class="sr-only">{{ separator }} {{ site.data.strings.links | default:"Links" }}{{ site.data.strings.colon }}</span>
-        <span class="{{ site.data.strings.links_icon | default:'icon-link' }}" title="{{ site.data.strings.links | default:'Links' }}"></span>
-        {% for link in project.links %}
-          <a class="external" href="{{ link.url }}" property="sameAs">{{ link.title }}</a>
-          {% unless forloop.last %}{{ separator }}{% endunless %}
-        {% endfor %}
-      </span>
-    </p>
-
-    {% assign screenshot = project.screenshot | default:project.image %}
-    <div class="img-wrapper lead aspect-ratio sixteen-nine {% unless screenshot %}fallback-img{% endunless %}">
-      {% if screenshot %}
-        {% include_cached components/hy-img.html
-          img=screenshot
-          sizes="(min-width: 90em) 48rem, (min-width: 54em) 42rem, (min-width: 42em) 38rem, 100vw"
-          alt=project.title
-          property="image"
-          width=864
-          height=486
-        %}
-      {% endif %}
+      <aside class="gutter" aria-label="Other projects">
+        <p class="module-label">Other projects</p>
+        <ul class="stack stack--nav">
+          {% for p in others %}
+            <li><a href="{{ p.url | relative_url }}">{{ p.title }}</a></li>
+          {% endfor %}
+        </ul>
+      </aside>
     </div>
-
-    {% include components/message.html text=project.description hide=page.hide_description property="description" alt="" %}
-    {% if project.caption %}<meta property="disambiguatingDescription" content="{{ project.caption }}"/>{% endif %}
-  </header>
-
-  {{ content }}
+  </div>
 </article>
-
-{% include components/dingbat.html %}
-
-{% assign addons = page.addons | default:site.hydejack.project_addons %}
-{% unless addons %}{% assign addons = "about,newsletter,other" | split:"," %}{% endunless %}
-{% for addon in addons %}
-  {% case addon %}
-  {% when 'about' %}
-     {% include_cached components/about.html author=page.author %}
-  {% when 'newsletter' %}
-    {% include if-non-null try="pro/newsletter.html" %}
-  {% when 'other' %}
-    {% include if-non-null try="pro/other-projects.html" %}
-  {% when 'comments' %}
-    {% include body/comments.html %}
-  {% else %}
-  {% endcase %}
-{% endfor %}

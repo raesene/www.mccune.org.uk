@@ -1,5 +1,6 @@
 ---
 layout: project
+plate: /assets/img/nitrile/projects/pci-for-kubernetes.webp
 title: 'PCI container orchestration guidance for Kubernetes'
 caption: Wrote a series of posts explaining the PCI Container orchestration guidance for Kubernetes
 description: >

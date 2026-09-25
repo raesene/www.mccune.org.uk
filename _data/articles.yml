@@ -1,0 +1,104 @@
+# Articles published outside the personal blog, grouped by publication.
+# Newest first within each publication, matching articles.md.
+- publication: Datadog Blog
+  articles:
+    - title: "Kubernetes security fundamentals: Networking"
+      url: https://securitylabs.datadoghq.com/articles/kubernetes-security-fundamentals-part-6/
+    - title: "Kubernetes security fundamentals: Admission Control"
+      url: https://securitylabs.datadoghq.com/articles/kubernetes-security-fundamentals-part-5/
+    - title: "Kubernetes security fundamentals: Authorization"
+      url: https://securitylabs.datadoghq.com/articles/kubernetes-security-fundamentals-part-4/
+    - title: "Kubernetes security fundamentals: Authentication"
+      url: https://securitylabs.datadoghq.com/articles/kubernetes-security-fundamentals-part-3/
+    - title: "Kubernetes security fundamentals: API Security"
+      url: https://securitylabs.datadoghq.com/articles/kubernetes-security-fundamentals-part-2/
+    - title: "Kubernetes security fundamentals: Introduction"
+      url: https://securitylabs.datadoghq.com/articles/kubernetes-security-fundamentals-part-1/
+    - title: "Container Security Fundamentals: Part 6 - Seccomp"
+      url: https://securitylabs.datadoghq.com/articles/container-security-fundamentals-part-6/
+    - title: "Container Security Fundamentals: Part 5 - Apparmor and SELinux"
+      url: https://securitylabs.datadoghq.com/articles/container-security-fundamentals-part-5/
+    - title: "Container Security Fundamentals: Part 4 - Cgroups"
+      url: https://securitylabs.datadoghq.com/articles/container-security-fundamentals-part-4/
+    - title: "Container Security Fundamentals: Part 3 - Capabilities"
+      url: https://securitylabs.datadoghq.com/articles/container-security-fundamentals-part-3/
+    - title: "Container Security Fundamentals: Part 2 - Isolation & namespaces"
+      url: https://securitylabs.datadoghq.com/articles/container-security-fundamentals-part-2/
+    - title: "Container Security Fundamentals: Part 1 - Exploring containers as processes"
+      url: https://securitylabs.datadoghq.com/articles/container-security-fundamentals-part-1/
+    - title: "What's new for security in Kubernetes 1.28"
+      url: https://securitylabs.datadoghq.com/articles/whats-new-for-security-in-kubernetes-128/
+    - title: "What's new for security in Kubernetes 1.27"
+      url: https://securitylabs.datadoghq.com/articles/whats-new-for-security-in-kubernetes-127/
+    - title: "What's new for security in Kubernetes 1.26"
+      url: https://securitylabs.datadoghq.com/articles/whats-new-for-security-in-kubernetes-126/
+    - title: "What's new for security in Kubernetes 1.25"
+      url: https://securitylabs.datadoghq.com/articles/whats-new-for-security-in-kubernetes-125/
+    - title: "Attacker persistence in Kubernetes using the TokenRequest API: Overview, detection, and prevention"
+      url: https://securitylabs.datadoghq.com/articles/kubernetes-tokenrequest-api/
+- publication: Kubernetes Blog
+  articles:
+    - title: "Securing Admission controllers"
+      url: https://kubernetes.io/blog/2022/01/19/secure-your-admission-controllers-and-webhooks/
+- publication: TechBeacon
+  articles:
+    - title: " Container Orchestration Advice for security teams "
+      url: https://techbeacon.com/security/container-orchestration-key-what-your-security-team-needs-know
+    - title: " a Hackers guide to Kubernetes security"
+      url: https://techbeacon.com/enterprise-it/hackers-guide-kubernetes-security
+- publication: DZone
+  articles:
+    - title: " DZone Kubernetes Refcard"
+      url: https://cdn2.hubspot.net/hubfs/1665891/Assets/Aqua_DZone_Refcard275_KubernetesSecurity.pdf
+- publication: Aqua Blog
+  articles:
+    - title: "Summary of new security features in Kubernetes 1.24"
+      url: https://blog.aquasec.com/kubernetes-1.24
+    - title: "A look at privilege escalation risks from access to the Kubernetes certificate signing request API"
+      url: https://blog.aquasec.com/kubernetes-rbac-privilige-escalation
+    - title: "Analysis of CVE-2022-23648 in ContainerD focusing on container breakout risks"
+      url: https://blog.aquasec.com/cve-2022-23648-containerd-cri-plugin
+    - title: "Analysis of CVE-2022-0811 in CRI-O focusing on the container breakout risks"
+      url: https://blog.aquasec.com/cve-2022-0811-cri-o-vulnerability
+    - title: "Analysis of CVE-2022-0492 in the Linux kernel focusing on container breakout risks"
+      url: https://blog.aquasec.com/new-linux-kernel-vulnerability-escaping-containers-by-abusing-cgroups
+    - title: "Analysis of CVE-2022-0847 (a.k.a DirtyPipe) focusing on container breakout rirks"
+      url: https://blog.aquasec.com/cve-2022-0847-dirty-pipe-linux-vulnerability
+    - title: "A look at the node/proxy feature in Kubernetes and the risks of privilege escalation from user access to it"
+      url: https://blog.aquasec.com/privilege-escalation-kubernetes-rbac
+    - title: "Some thoughts on Zero Trust networking in a Kubernetes environment"
+      url: https://blog.aquasec.com/zero-trust-kubernetes
+    - title: "Implementing Container signing and scanning in Github Actions"
+      url: https://blog.aquasec.com/trivy-github-actions-security-cicd-pipeline
+    - title: "An article looking at some of the details of how Kubernetes implements RBAC and virtual verbs"
+      url: https://blog.aquasec.com/kubernetes-verbs
+    - title: "Analysis of CVE-2022-0185 in the Linux kernel focusing on container breakout risks"
+      url: https://blog.aquasec.com/cve-2022-0185-linux-kernel-container-escape-in-kubernetes
+    - title: "Summary of the new security features in Kubernetes 1.23"
+      url: https://blog.aquasec.com/kubernetes-version-1.23-security-features
+    - title: "An article looking at how Trivy scans Golang programs for vulnerabilities"
+      url: https://blog.aquasec.com/trivy-golang-scanning
+    - title: "A way of thinking about how to improve your Kubernetes security by increasing your \"Mess-Up Tolerance\""
+      url: https://blog.aquasec.com/kubernetes-security-priorities
+    - title: "Review of the Docker Hub Official Images looking at how well maintained they are"
+      url: https://blog.aquasec.com/docker-official-images
+    - title: "Top 10 Kubernetes Application Security Hardening Techniques"
+      url: https://blog.aquasec.com/kubernetes-hardening-techniques
+    - title: "Summary of the new security features in Kubernetes 1.22"
+      url: https://blog.aquasec.com/kubernetes-version-1.22-security-features
+    - title: "Article looking at the system:masters group in Kubernetes and the security risks of useing it"
+      url: https://blog.aquasec.com/kubernetes-authorization
+    - title: "A look at Kubernetes secret storage and why you should avoid storing secrets in configmaps"
+      url: https://blog.aquasec.com/kubernetes-configmap-secrets
+    - title: "Analysis of some of the challenges in uniquely identifying container images"
+      url: https://blog.aquasec.com/docker-image-tags
+    - title: "Summary of the new security features in Kubernetes 1.21"
+      url: https://blog.aquasec.com/kubernetes-version-1.21-features
+- publication: NCC Group Research Blog
+  articles:
+    - title: " Kubernetes Security: Consider your threat model"
+      url: https://www.nccgroup.com/research-blog/kubernetes-security-consider-your-threat-model/
+    - title: "Setting a new standard for Kubernetes Deployments"
+      url: https://www.nccgroup.com/research-blog/setting-a-new-standard-for-kubernetes-deployments/
+    - title: "CIS Benchmark for Docker"
+      url: https://www.nccgroup.com/research-blog/the-cis-security-standard-for-docker-available-now/

@@ -1,0 +1,54 @@
+---
+layout: default
+---
+{% assign talks = site.categories[page.slug] %}
+{% assign years = talks | group_by_exp: "talk", "talk.date | date: '%Y'" %}
+{% assign with_video = 0 %}
+{% for talk in talks %}{% if talk.content contains "youtu" or talk.content contains "vimeo" %}{% assign with_video = with_video | plus: 1 %}{% endif %}{% endfor %}
+
+<article class="doc">
+  <div class="measure">
+    <header class="doc-head">
+      <h1>{{ page.title }}</h1>
+      <p class="doc-head__lede">{{ content | strip_html | strip }}</p>
+    </header>
+
+    <dl class="readout readout--compact">
+      <div><dt>Talks</dt><dd>{{ talks.size }}</dd></div>
+      <div><dt>With video</dt><dd>{{ with_video }}</dd></div>
+      <div><dt>Years</dt><dd>{{ years.last.name }}–{{ years.first.name }}</dd></div>
+    </dl>
+
+    <div class="bench__grid bench__grid--doc">
+      <div class="slab slab--dominant">
+        {% for year in years %}
+          <section class="year" id="y{{ year.name }}" aria-labelledby="y{{ year.name }}-h">
+            <ol class="strip strip--talks strip--log">
+              {% for talk in year.items %}
+                <li class="strip__row{% if forloop.parentloop.first and forloop.first %} is-pinned{% endif %}">
+                  <span class="strip__rail">{% if forloop.first %}<h2 id="y{{ year.name }}-h" class="strip__year">{{ year.name }}</h2>{% endif %}</span>
+                  <time datetime="{{ talk.date | date_to_xmlschema }}">{{ talk.date | date: "%d %b" }}</time>
+                  <a href="{{ talk.url | relative_url }}">{{ talk.title }}</a>
+                  <span class="strip__flag">{% if talk.content contains "youtu" or talk.content contains "vimeo" %}video{% endif %}</span>
+                </li>
+              {% endfor %}
+            </ol>
+          </section>
+        {% endfor %}
+      </div>
+
+      <aside class="gutter gutter--sticky" aria-label="Jump to year">
+        <figure class="plate">
+          <img src="{{ '/assets/img/nitrile/talks-lectern.webp' | relative_url }}" width="1200" height="896" loading="lazy"
+               alt="Pen and dot-screen drawing of an empty lectern on a stage, laptop open, microphone bent toward the absent speaker.">
+        </figure>
+        <p class="module-label">Jump to year</p>
+        <ul class="year-index">
+          {% for year in years %}
+            <li><a href="#y{{ year.name }}">{{ year.name }}</a><span>{{ year.items.size }}</span></li>
+          {% endfor %}
+        </ul>
+      </aside>
+    </div>
+  </div>
+</article>

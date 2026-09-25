@@ -1,5 +1,6 @@
 ---
 layout: project
+plate: /assets/img/nitrile/projects/cloud-native-security-book.webp
 title: 'Cloud Native Security Book'
 caption: A book on Cloud Native Security
 description: >

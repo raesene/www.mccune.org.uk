@@ -1,0 +1,50 @@
+---
+layout: default
+---
+{% assign total = 0 %}
+{% assign max = 0 %}
+{% for pub in site.data.articles %}
+  {% assign total = total | plus: pub.articles.size %}
+  {% if pub.articles.size > max %}{% assign max = pub.articles.size %}{% endif %}
+{% endfor %}
+
+<article class="doc">
+  <div class="measure">
+    <header class="doc-head">
+      <h1>{{ page.title }}</h1>
+      <div class="doc-head__lede">{{ content }}</div>
+    </header>
+
+    <div class="bench__grid bench__grid--doc">
+      <div class="slab slab--dominant">
+        {% for pub in site.data.articles %}
+          <section class="publication" id="{{ pub.publication | slugify }}" aria-labelledby="{{ pub.publication | slugify }}-h">
+            <header class="module-head">
+              <h2 id="{{ pub.publication | slugify }}-h">{{ pub.publication }}</h2>
+              <span class="module-head__more">{{ pub.articles.size }} article{% if pub.articles.size != 1 %}s{% endif %}</span>
+            </header>
+            <ul class="strip strip--articles">
+              {% for article in pub.articles %}
+                <li class="strip__row"><a href="{{ article.url }}">{{ article.title }}</a></li>
+              {% endfor %}
+            </ul>
+          </section>
+        {% endfor %}
+      </div>
+
+      <aside class="gutter gutter--sticky" aria-label="Publications">
+        <p class="module-label">{{ total }} articles in {{ site.data.articles.size }} publications</p>
+        <ul class="ledger ledger--compact">
+          {% for pub in site.data.articles %}
+            {% assign pct = pub.articles.size | times: 100 | divided_by: max %}
+            <li>
+              <a class="ledger__name" href="#{{ pub.publication | slugify }}">{{ pub.publication }}</a>
+              <span class="ledger__meter" aria-hidden="true"><span style="width: {{ pct }}%"></span></span>
+              <span class="ledger__count">{{ pub.articles.size }}</span>
+            </li>
+          {% endfor %}
+        </ul>
+      </aside>
+    </div>
+  </div>
+</article>

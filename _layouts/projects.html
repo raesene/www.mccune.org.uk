@@ -1,35 +1,33 @@
 ---
-# Copyright (c) 2018 Florian Klampfer <https://qwtel.com/>
-layout: page
+layout: default
 ---
+{% assign featured = site.projects | where: "featured", true %}
+{% assign rest = site.projects | where_exp: "p", "p.featured != true" %}
+{% assign projects = featured | concat: rest %}
 
-{{ content }}
+<article class="doc">
+  <div class="measure">
+    <header class="doc-head">
+      <h1>{{ page.title }}</h1>
+      {% if page.description %}<p class="doc-head__lede">{{ page.description | strip_html | strip }}</p>{% endif %}
+    </header>
 
-{% assign show_collection = page.show_collection | default:"projects" %}
-{% assign empty_col = '' | split:'.' %}
-{% assign ordered_projects = site[show_collection] | default:empty_col | sort:"date" | reverse %}
-{% assign nsd = site.hydejack.no_structured_data | default:site.no_structured_data %}
-
-{% assign projects_group_by = site.data.strings.date_formats.projects_group_by | default:"%Y" %}
-{% assign no_third_column = page.no_third_column | default:site.hydejack.no_third_column | default:false %}
-
-{% assign prev_date = 0 %}
-{% if page.no_groups %}<div class="columns {% unless no_third_column %}columns-break{% endunless %}">{% endif %}
-{% for project in ordered_projects %}
-  {% assign current_date = project.date | date:projects_group_by %}
-
-  {% unless page.no_groups %}{% if current_date != prev_date %}
-    {% unless forloop.first %}</div>{% endunless %}
-
-    <h2 id="{{ projects_group_by | slugify }}-{{ current_date | slugify }}">{{ current_date }}</h2>
-    <div class="columns {% unless no_third_column %}columns-break{% endunless %}">
-    {% assign prev_date = current_date %}
-  {% endif %}{% endunless %}
-
-  {% assign featured = page.featured | default:project.featured | default:page.big_project | default:project.big_project %}
-  <div class="column {% if featured %}column-1{% else %}column-1-2{% endif %}">
-    {% include_cached pro/project-card.html project=project featured=featured %}
+    <ol class="register">
+      {% for project in projects %}
+        <li class="register__row{% if project.featured %} register__row--featured ticks{% endif %}">
+          <a class="register__plate" href="{{ project.url | relative_url }}" tabindex="-1" aria-hidden="true">
+            <img src="{{ project.plate | relative_url }}" width="1400" height="781" loading="lazy" alt="">
+          </a>
+          <div class="register__copy">
+            {% if project.featured %}<p class="module-label"><span class="pin" aria-hidden="true"></span>Featured project</p>{% endif %}
+            <h2><a href="{{ project.url | relative_url }}">{{ project.title }}</a></h2>
+            <p>{{ project.description | strip_html | strip }}</p>
+            <p class="register__links">
+              {% for link in project.links %}<a href="{{ link.url }}">{% if link.title == "Link" %}Visit the project{% else %}{{ link.title }}{% endif %}</a>{% endfor %}
+            </p>
+          </div>
+        </li>
+      {% endfor %}
+    </ol>
   </div>
-
-  {% if forloop.last %}</div>{% endif %}
-{% endfor %}
+</article>
