@@ -18,6 +18,8 @@ menu:
     url:               https://raesene.github.io/
   - title:             Projects
     url:               /projects/
+  - title:             Code
+    url:               /code/
   - title:             Talks
     url:               /talks/
   - title:             Articles
@@ -42,6 +44,9 @@ collections:
   projects:
     permalink:         /projects/:path/
     output:            true
+  code:
+    permalink:         /code/:path/
+    output:            true
 
 defaults:
   - scope:
@@ -52,6 +57,12 @@ defaults:
       type:            projects
     values:
       layout:          project
+      seo:
+        type:          WebPage
+  - scope:
+      type:            code
+    values:
+      layout:          tool
       seo:
         type:          WebPage
   - scope:

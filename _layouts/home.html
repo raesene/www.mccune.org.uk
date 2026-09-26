@@ -27,6 +27,7 @@ layout: default
       <div><dt>Talks</dt><dd>{{ talks.size }}</dd></div>
       <div><dt>Speaking since</dt><dd>{{ first_year }}</dd></div>
       <div><dt>Projects</dt><dd>{{ site.projects.size }}</dd></div>
+      <div><dt>Code</dt><dd>{{ site.code.size }}</dd></div>
       <div><dt>Articles</dt><dd>{{ article_count }}</dd></div>
       <div><dt>Tutorials</dt><dd>{{ site.data.tutorials.size }}</dd></div>
     </dl>
@@ -112,6 +113,21 @@ status:
           <span class="strip__note">{{ project.caption }}</span>
         </li>
         {% endunless %}
+      {% endfor %}
+    </ul>
+
+    <header class="module-head module-head--sub">
+      <h2 id="code-title">Code</h2>
+      <a class="module-head__more" href="{{ '/code/' | relative_url }}">All tools</a>
+    </header>
+    <ul class="strip strip--projects strip--code" aria-labelledby="code-title">
+      {% assign tools = site.code | sort: "started" | reverse %}
+      {% for tool in tools %}
+        <li class="strip__row">
+          <a href="{{ tool.url | relative_url }}">{{ tool.title }}</a>
+          <span class="strip__note">{{ tool.caption }}</span>
+          <span class="strip__flag">{{ tool.language }}</span>
+        </li>
       {% endfor %}
     </ul>
   </div>

@@ -185,7 +185,7 @@ h1, h2, h3 {
 
 .readout {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(6, 1fr);
   margin: 32px 0 0;
   border-top: 1px solid var(--hair);
   border-bottom: 1px solid var(--hair);
@@ -260,6 +260,10 @@ h1, h2, h3 {
 .strip--projects .strip__row { grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); }
 .strip--projects a { font-weight: 500; }
 .strip__note { color: var(--muted); font-size: 15.5px; }
+
+.module-head--sub { margin-top: 64px; }
+.strip--code { margin-top: 0; }
+.strip--code .strip__row { grid-template-columns: minmax(0, 5fr) minmax(0, 6fr) minmax(0, 1fr); }
 
 .strip--articles .strip__row { padding-left: 0; }
 
@@ -436,6 +440,27 @@ h1, h2, h3 {
 .register--text { margin-top: 32px; }
 .register--text .register__copy { grid-column: 1 / -1; }
 
+.register__spec {
+  display: flex; flex-wrap: wrap; gap: 4px 0;
+  font: 12.5px/1.4 var(--font-mono) !important;
+  text-transform: uppercase;
+  letter-spacing: .08em;
+  color: var(--muted);
+}
+.register__spec span::before { content: "/"; margin: 0 10px; color: var(--hair); }
+
+/* Code: spec readout and usage transcript in the gutter */
+
+.gutter--tool { display: grid; gap: 32px; }
+.spec { margin: 0; border-top: 1px solid var(--hair); font: 14.5px/1.4 var(--font-mono); }
+.spec div {
+  display: flex; justify-content: space-between; gap: 16px;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--hair);
+}
+.spec dt { color: var(--muted); }
+.spec dd { margin: 0; }
+
 .project-plate img { width: 100%; aspect-ratio: 21 / 9; object-fit: cover; }
 .project-plate {
   margin: 0 0 48px;
@@ -496,7 +521,7 @@ h1, h2, h3 {
   .strip--talks .strip__row { grid-template-columns: 44px 1fr; }
   .strip--talks time { display: none; }
   .strip__flag { display: none; }
-  .strip--projects .strip__row { grid-template-columns: 1fr; }
+  .strip--projects .strip__row, .strip--code .strip__row { grid-template-columns: 1fr; }
   .ledger li { grid-template-columns: minmax(0, 1fr) 72px 32px; }
   .feature { padding: 16px; }
   .feature__copy h3 { font-size: 30.9px; }

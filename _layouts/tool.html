@@ -1,0 +1,63 @@
+---
+layout: default
+---
+{% assign others = site.code | where_exp: "t", "t.url != page.url" %}
+
+<article class="doc">
+  <div class="measure">
+    <nav class="crumbs" aria-label="Breadcrumb">
+      <a href="{{ '/code/' | relative_url }}">Code</a>
+    </nav>
+
+    <header class="doc-head">
+      <h1>{{ page.title }}</h1>
+      {% if page.caption %}<p class="doc-head__lede">{{ page.caption }}</p>{% endif %}
+    </header>
+
+    <figure class="project-plate ticks">
+      <img src="{{ page.plate | relative_url }}" width="1400" height="781" alt="{{ page.plate_alt }}">
+    </figure>
+
+    <div class="bench__grid bench__grid--doc">
+      <div class="slab slab--dominant prose">
+        {% if page.description %}<p class="prose__lead">{{ page.description | strip_html | strip }}</p>{% endif %}
+        {{ content }}
+        {% if page.links %}
+          <p class="actions">
+            {% for link in page.links %}
+              <a class="btn{% if forloop.first %} btn--ink{% endif %}" href="{{ link.url }}">{{ link.title }}</a>
+            {% endfor %}
+          </p>
+        {% endif %}
+      </div>
+
+      <aside class="gutter gutter--tool" aria-label="About {{ page.title }}">
+        <div>
+          <p class="module-label">Spec</p>
+          <dl class="spec">
+            <div><dt>Language</dt><dd>{{ page.language }}</dd></div>
+            <div><dt>Licence</dt><dd>{{ page.licence }}</dd></div>
+            <div><dt>Since</dt><dd>{{ page.started }}</dd></div>
+          </dl>
+        </div>
+        {% if page.usage %}
+        <div>
+          <p class="module-label">Usage</p>
+          {% capture nl %}
+{% endcapture %}<pre class="transcript"><code>{% for line in page.usage %}{% unless forloop.first %}{{ nl }}{% endunless %}<span class="prompt">$</span> {{ line | escape }}{% endfor %}</code></pre>
+        </div>
+        {% endif %}
+        {% if others.size > 0 %}
+        <div>
+          <p class="module-label">More code</p>
+          <ul class="stack stack--nav">
+            {% for t in others %}
+              <li><a href="{{ t.url | relative_url }}">{{ t.title }}</a></li>
+            {% endfor %}
+          </ul>
+        </div>
+        {% endif %}
+      </aside>
+    </div>
+  </div>
+</article>

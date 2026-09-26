@@ -61,6 +61,40 @@ Optional extra detail in Markdown.
 - A link titled plain `Link` is shown as "Visit the project".
 - To feature a project on the homepage and at the top of `/projects/`, add `featured: true`. Only one project should have it (currently OWASP Kubernetes Top 10).
 
+## Add code
+
+Tools you've written live in the `code` collection. Create `_code/short-slug.md`:
+
+```markdown
+---
+plate: /assets/img/nitrile/code/short-slug.webp
+plate_alt: Description of the drawing, for screen readers.
+title: 'Tool name'
+caption: One line shown under the title and in lists
+description: >
+  A paragraph on what the tool does.
+language: Go
+licence: MIT
+started: 2026
+usage:
+  - tool do-something
+  - tool do-something-else
+links:
+  - title: Documentation
+    url: https://example.com
+  - title: Source on GitHub
+    url: https://github.com/raesene/short-slug
+sitemap: false
+---
+
+Longer write-up in Markdown.
+```
+
+- It appears at `/code/short-slug/`, on `/code/` and in the homepage's Code strip, newest `started` first. The count updates on its own.
+- `usage` commands are shown in the page's gutter, each with a `$` prompt. Leave it out if there's nothing useful to show.
+- The first link becomes the solid button.
+- `plate` is a Trame drawing, like the project plates, saved under `assets/img/nitrile/code/`.
+
 ## Add an article
 
 Articles live in `_data/articles.yml`, grouped by publication, newest first within each:
