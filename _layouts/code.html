@@ -17,7 +17,6 @@ layout: default
             <img src="{{ tool.plate | relative_url }}" width="1400" height="781" loading="lazy" alt="">
           </a>
           <div class="register__copy">
-            <p class="register__spec">{{ tool.language }}<span>{{ tool.licence }}</span><span>Since {{ tool.started }}</span></p>
             <h2><a href="{{ tool.url | relative_url }}">{{ tool.title }}</a></h2>
             <p>{{ tool.description | strip_html | strip }}</p>
             <p class="register__links">

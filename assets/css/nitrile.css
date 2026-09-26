@@ -440,15 +440,6 @@ h1, h2, h3 {
 .register--text { margin-top: 32px; }
 .register--text .register__copy { grid-column: 1 / -1; }
 
-.register__spec {
-  display: flex; flex-wrap: wrap; gap: 4px 0;
-  font: 12.5px/1.4 var(--font-mono) !important;
-  text-transform: uppercase;
-  letter-spacing: .08em;
-  color: var(--muted);
-}
-.register__spec span::before { content: "/"; margin: 0 10px; color: var(--hair); }
-
 /* Code: spec readout and usage transcript in the gutter */
 
 .gutter--tool { display: grid; gap: 32px; }
